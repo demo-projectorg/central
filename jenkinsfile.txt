@@ -6,6 +6,7 @@ pipeline {
             steps { 
                 
 				echo 'Building stage'
+				echo 'From branch1'
             }
         }
         stage('Test'){
