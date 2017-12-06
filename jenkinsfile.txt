@@ -12,7 +12,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 sh 'pwd' 
-                echo 'update'
+                echo 'updated'
             }
         }
         stage('Test'){
