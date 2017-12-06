@@ -8,7 +8,7 @@ properties([
 properties([
   pipelineTriggers([
     upstream(
-      threshold: 'SUCCESS',
+      threshold: jenkins.model.Result.SUCCESS,
       upstreamProjects: 'https://github.com/harika-atmala/central.git/'
     )
   ])
