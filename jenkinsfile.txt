@@ -5,7 +5,6 @@ properties([
     projectUrlStr: 'https://github.com/harika-atmala/central.git/'],
     pipelineTriggers([githubPush()])])
 
-
 pipeline {
     agent any 
 
@@ -25,29 +24,6 @@ pipeline {
             steps {
                 sh 'ls'
                 sh 'pwd'
-            }
-        }
-    }
-}
-
-pipeline {
-    agent any 
-
-    stages {
-        stage('Build') { 
-            steps { 
-                
-				echo 'Building stage'
-            }
-        }
-        stage('Test'){
-            steps {
-                echo 'Testing stage'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'deploying stage'
             }
         }
     }
