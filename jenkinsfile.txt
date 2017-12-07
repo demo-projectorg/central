@@ -11,9 +11,14 @@ properties([
 
             
 pipeline {
-    agent any
+    agent {
+        label{
+            label 'Slavenode'
+        }
+    }
     
-    parameters{
+    parameters
+    {
     string(defaultValue: 'default', description: 'Select which branch', name: 'Branch'), 
     choice(choices: ['Integration/unit'], description: 'Used for posgress.sh and CodeDeploy deployment group', name: 'Environment'), 
     booleanParam(defaultValue: false, description: 'Should we rebuild the database?', name: 'Rebuild Database'), 
@@ -26,10 +31,10 @@ pipeline {
             steps { 
                 sh 'pwd' 
                 echo ' new update...'
-                echo 'name: ${params.Branch}'
-                echo 'name: ${Environment}'
-                echo 'name: {Rebuild Database}'
-                echo 'name: {Deploy}'
+                //echo 'name: ${params.Branch}'
+                //echo 'name: ${Environment}'
+                //echo 'name: {Rebuild Database}'
+                //echo 'name: {Deploy}'
             }
         }
         stage('Test'){
