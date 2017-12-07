@@ -16,7 +16,7 @@ pipeline {
         stage('Buil') { 
             steps { 
                 sh 'pwd' 
-                echo ' new update'
+                echo ' new update...'
             }
         }
         stage('Test'){
