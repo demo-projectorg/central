@@ -1,9 +1,12 @@
 #!/usr/bin/env groovy
+#!/usr/bin/env groovy
 properties([
     [$class: 'GithubProjectProperty',
     displayName: '',
     projectUrlStr: 'https://github.com/harika-atmala/central.git/'],
     pipelineTriggers([githubPush()])])
+
+properties([pipelineTriggers([upstream('branch3')])])
 
 
             
