@@ -11,9 +11,18 @@ properties([
 
             
 pipeline {
-    agent any 
+    agent {
+        label{
+            label 'branch1'
+        }
+    }
     
-parameters([string(defaultValue: '', description: '', name: 'default'), choice(choices: [''], description: '', name: ''), booleanParam(defaultValue: false, description: '', name: '')]), pipelineTriggers([upstream('jenkins-multibranch-pipeline/master')])])
+properties([parameters([
+    string(defaultValue: 'default', description: 'Select which branch', name: 'Branch'), 
+    choice(choices: ['Integration/unit'], description: 'Used for posgress.sh and CodeDeploy deployment group', name: 'Environment'), 
+    booleanParam(defaultValue: false, description: 'Should we rebuild the database?', name: 'Rebuild Database'), 
+    booleanParam(defaultValue: false, description: 'Deploy the application?', name: 'Deploy')]), pipelineTriggers([githubPush()])])
+
 
     stages {
         stage('Buil') { 
