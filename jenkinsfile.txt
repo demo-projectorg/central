@@ -5,6 +5,8 @@ properties([
     projectUrlStr: 'https://github.com/harika-atmala/central.git/'],
     pipelineTriggers([githubPush()])])
 
+properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/harika-atmala/central/'], pipelineTriggers([upstream('jenkins-multibranch-pipeline/branch1')])])
+
 properties([pipelineTriggers([upstream('branch1')])])
 
 pipeline {
