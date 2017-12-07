@@ -4,7 +4,7 @@ properties([
     projectUrlStr: 'https://github.com/harika-atmala/central.git/'],
     pipelineTriggers([upstream('master'), githubPush()])])
 
-#properties([pipelineTriggers([upstream('master')])])
+//properties([pipelineTriggers([upstream('master')])])
 
 pipeline {
     agent any 
