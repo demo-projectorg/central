@@ -8,7 +8,7 @@ properties([
 properties([[$class: 'GithubProjectProperty', 
              displayName: '', 
              projectUrlStr: 'https://github.com/harika-atmala/central.git/'], 
-            pipelineTriggers([upstream(threshold: 'FAILURE', upstreamProjects: 'branch3')])])
+            pipelineTriggers([upstream(threshold: 'SUCCESS', upstreamProjects: 'branch3')])])
 pipeline {
     agent any 
 
