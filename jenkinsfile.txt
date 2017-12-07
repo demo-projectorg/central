@@ -5,7 +5,11 @@ properties([
     projectUrlStr: 'https://github.com/harika-atmala/central.git/'],
     pipelineTriggers([githubPush()])])
 
-
+properties([parameters([
+    string(defaultValue: 'default', description: 'Select which branch', name: 'Branch'), 
+    choice(choices: ['Integration/unit'], description: 'Used for posgress.sh and CodeDeploy deployment group', name: 'Environment'), 
+    booleanParam(defaultValue: false, description: 'Should we rebuild the database?', name: 'Rebuild Database'), 
+    booleanParam(defaultValue: false, description: 'Deploy the application?', name: 'Deploy')]), pipelineTriggers([githubPush()])])
 //properties([pipelineTriggers([upstream('branch3')])])
 
 
@@ -17,11 +21,7 @@ pipeline {
         }
     }
     
-properties([parameters([
-    string(defaultValue: 'default', description: 'Select which branch', name: 'Branch'), 
-    choice(choices: ['Integration/unit'], description: 'Used for posgress.sh and CodeDeploy deployment group', name: 'Environment'), 
-    booleanParam(defaultValue: false, description: 'Should we rebuild the database?', name: 'Rebuild Database'), 
-    booleanParam(defaultValue: false, description: 'Deploy the application?', name: 'Deploy')]), pipelineTriggers([githubPush()])])
+
 
 
     stages {
