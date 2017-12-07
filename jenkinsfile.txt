@@ -1,10 +1,11 @@
+#!/usr/bin/env groovy
 properties([
     [$class: 'GithubProjectProperty',
     displayName: '',
     projectUrlStr: 'https://github.com/harika-atmala/central.git/'],
-    pipelineTriggers([upstream('master'), githubPush()])])
+    pipelineTriggers([githubPush()])])
 
-//properties([pipelineTriggers([upstream('master')])])
+properties([pipelineTriggers([upstream('master')])])
 
 pipeline {
     agent any 
