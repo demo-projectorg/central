@@ -6,7 +6,7 @@ properties([
     projectUrlStr: 'https://github.com/harika-atmala/central.git/'],
     pipelineTriggers([githubPush()])])
 
-properties([pipelineTriggers([upstream('branch3')])])
+//properties([pipelineTriggers([upstream('branch3')])])
 
 
             
