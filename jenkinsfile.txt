@@ -11,11 +11,7 @@ properties([
 
             
 pipeline {
-    agent {
-        label{
-            label 'Slavenode'
-        }
-    }
+    agent any
     
     parameters
     {
