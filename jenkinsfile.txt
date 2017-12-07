@@ -2,7 +2,7 @@ properties([
     [$class: 'GithubProjectProperty',
     displayName: '',
     projectUrlStr: 'https://github.com/harika-atmala/central.git/'],
-    pipelineTriggers([upstream(threshold: 'SUCCESS', upstreamProjects: 'branch2'), githubPush()])])
+    pipelineTriggers([upstream('master'), githubPush()])])
 
 #properties([pipelineTriggers([upstream('master')])])
 
