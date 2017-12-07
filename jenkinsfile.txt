@@ -15,8 +15,8 @@ pipeline {
     
     parameters
     {
-    string(defaultValue: 'default', description: 'Select which branch', name: 'Branch'), 
-    choice(choices: ['Integration/unit'], description: 'Used for posgress.sh and CodeDeploy deployment group', name: 'Environment'), 
+    string(name: 'Branch', defaultValue: 'default', description: 'Select which branch'), 
+    choice(name: 'Environment', choices: ['Integration/unit'], description: 'Used for posgress.sh and CodeDeploy deployment group'), 
     booleanParam(defaultValue: false, description: 'Should we rebuild the database?', name: 'Rebuild Database'), 
     booleanParam(defaultValue: false, description: 'Deploy the application?', name: 'Deploy')
     }
