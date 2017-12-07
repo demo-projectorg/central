@@ -15,11 +15,7 @@ properties([parameters([
 
             
 pipeline {
-    agent {
-        label{
-            label 'branch1'
-        }
-    }
+    agent any
     
 
 
